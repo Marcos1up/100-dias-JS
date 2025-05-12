@@ -1,0 +1,254 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+:root {
+  --primary-color: #4361ee;
+  --primary-light: #4895ef;
+  --weak-color: #e5383b;
+  --medium-color: #ffb703;
+  --strong-color: #06d6a0;
+  --background-color: #f8f9fa;
+  --text-color: #212529;
+  --text-secondary: #495057;
+  --border-color: #dee2e6;
+  --card-bg: #ffffff;
+  --hover-color: #e9ecef;
+  --shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+  --transition: all 0.3s ease;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: var(--background-color);
+  color: var(--text-color);
+  transition: var(--transition);
+}
+
+.container {
+  width: 450px;
+  max-width: 95%;
+  background: var(--card-bg);
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+
+.container h2 {
+  font-weight: 600;
+  font-size: 1.31rem;
+  padding: 1.25rem 1.75rem;
+  border-bottom: 1px solid var(--border-color);
+  color: var(--primary-color);
+  text-align: center;
+}
+
+.wrapper {
+  margin: 1.5rem 1.75rem;
+}
+
+.wrapper .input-box {
+  position: relative;
+  margin-bottom: 1rem;
+}
+
+.input-box input {
+  width: 100%;
+  height: 56px;
+  color: var(--text-color);
+  background: var(--background-color);
+  font-size: 1.06rem;
+  font-weight: 500;
+  border-radius: 12px;
+  letter-spacing: 1.4px;
+  border: 1px solid var(--border-color);
+  padding: 0 2.85rem 0 1rem;
+  transition: var(--transition);
+}
+
+.input-box span {
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: var(--text-secondary);
+  transition: var(--transition);
+  font-size: 1.25rem;
+}
+
+.input-box span:hover {
+  color: var(--primary-color) !important;
+}
+
+.wrapper .pass-indicator {
+  width: 100%;
+  height: 6px;
+  position: relative;
+  margin-top: 0.5rem;
+  border-radius: 25px;
+  background: var(--border-color);
+  overflow: hidden;
+}
+
+.pass-indicator::before {
+  position: absolute;
+  content: '';
+  height: 100%;
+  width: 0;
+  border-radius: inherit;
+  transition: width 0.3s ease;
+}
+
+.pass-indicator#weak::before {
+  width: 20%;
+  background: var(--weak-color);
+}
+
+.pass-indicator#medium::before {
+  width: 50%;
+  background: var(--medium-color);
+}
+
+.pass-indicator#strong::before {
+  width: 100%;
+  background: var(--strong-color);
+}
+
+.wrapper .pass-length {
+  margin: 1.75rem 0 1.5rem;
+}
+
+.pass-length .details {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.75rem;
+}
+
+.pass-length .title,
+.pass-settings .title {
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.pass-length span {
+  color: var(--primary-color);
+  font-weight: 600;
+}
+
+.pass-length input {
+  width: 100%;
+  height: 6px;
+  accent-color: var(--primary-color);
+  cursor: pointer;
+}
+
+.pass-settings .options {
+  display: flex;
+  list-style: none;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+  gap: 0.5rem;
+}
+
+.pass-settings .options .option {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+  width: calc(100% / 2 - 0.5rem);
+}
+
+.options .option input {
+  height: 16px;
+  width: 16px;
+  cursor: pointer;
+  accent-color: var(--primary-color);
+}
+
+.options .option label {
+  cursor: pointer;
+  color: var(--text-secondary);
+  padding-left: 0.63rem;
+  font-size: 0.95rem;
+  user-select: none;
+}
+
+.wrapper .generate-btn {
+  width: 100%;
+  color: #fff;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background: var(--primary-color);
+  font-size: 1.06rem;
+  padding: 1rem 0;
+  border-radius: 12px;
+  text-transform: uppercase;
+  margin: 1.25rem 0 0.5rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+  transition: var(--transition);
+  box-shadow: 0 4px 10px rgba(67, 97, 238, 0.3);
+}
+
+.wrapper .generate-btn:hover {
+  background: var(--primary-light);
+  transform: translateY(-2px);
+}
+
+.wrapper .generate-btn:active {
+  transform: translateY(0);
+}
+
+/* Estilos para el slider personalizado */
+input[type='range'] {
+  -webkit-appearance: none;
+  appearance: none;
+  background: var(--border-color);
+  border-radius: 10px;
+  outline: none;
+}
+
+input[type='range']::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  background: var(--primary-color);
+  cursor: pointer;
+  border-radius: 50%;
+  border: none;
+}
+
+input[type='range']::-moz-range-thumb {
+  width: 18px;
+  height: 18px;
+  background: var(--primary-color);
+  cursor: pointer;
+  border-radius: 50%;
+  border: none;
+}
+
+/* Estilo para checkbox personalizado */
+input[type='checkbox'] {
+  accent-color: var(--primary-color);
+}
+
+/* Responsive */
+@media screen and (max-width: 480px) {
+  .pass-settings .options .option {
+    width: 100%;
+  }
+
+  .container {
+    width: 95%;
+  }
+}
